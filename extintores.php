@@ -6,7 +6,7 @@ if ($con->connect_error) {
 	die("A conexão falhou: " . $con->connect_error);
 }
 
-$sql = "SELECT ext_ID, ext_local, tipo, capacidade FROM equipamentos";
+$sql = "SELECT ext_ID, ext_local, tipo, capacidade, TH, recarga FROM equipamentos";
 $result = $con->query($sql);
 
 ?>
@@ -47,6 +47,8 @@ $result = $con->query($sql);
 						<th>Local</th>
 						<th>Tipo</th>
 						<th>Capacidade</th>
+						<th>Teste Hidrostático</th>
+						<th>Recarga</th>
 					</tr>
 				';
 					while ($row = $result->fetch_assoc()) {
@@ -56,6 +58,8 @@ $result = $con->query($sql);
 							<td>' . $row['ext_local'] . '</td> 
 							<td>' . $row['tipo'] . '</td> 
 							<td>' . $row['capacidade'] . '</td> 
+							<td>' . $row['TH'] . '</td>
+							<td>' . $row['recarga'] . '</td>							
 						</tr>';
 					}
 					echo "</table>";
@@ -80,6 +84,12 @@ $result = $con->query($sql);
 						<input class="form-control" type="text" name="capacidade" placeholder="Capacidade">
 					</div>
 					<div class="col-md-6">
+						<input class="form-control" type="text" name="TH" placeholder="TH">
+					</div>
+					<div class="col-md-6">
+						<input class="form-control" type="text" name="recarga" placeholder="Recarga">
+					</div>
+					<div class="col-md-6">
 						<input class="botao cadastrar_extintor" type="submit" value="Cadastrar">
 					</div>
 				</form>
@@ -96,6 +106,12 @@ $result = $con->query($sql);
 					</div>
 					<div class="col-md-6">
 						<input class="form-control" type="text" name="capacidadeUpdate" placeholder="Capacidade">
+					</div>
+					<div class="col-md-6">
+						<input class="form-control" type="text" name="THUpdate" placeholder="TH">
+					</div>
+					<div class="col-md-6">
+						<input class="form-control" type="text" name="recargaUpdate" placeholder="Recarga">
 					</div>
 					<div class="col-md-6">
 						<input class="botao alterar_extintor" type="submit" value="Alterar">
