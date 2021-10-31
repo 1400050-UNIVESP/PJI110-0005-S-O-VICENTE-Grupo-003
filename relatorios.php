@@ -25,7 +25,12 @@ $result = $con->query($sql);
 		<header id="cabecalho">
 			<hgroup>
 				<h1>Relatórios</h1>
-			
+				</hgroup>
+			<nav id="menu">
+				<h1>Menu Principal</h1>
+				<ul>
+					<li onmouseover="mudaFoto ()"><a href="index.php">Voltar</a></li>
+				</ul>
 		</header>
 		<figure class="foto-legenda">
 			<footer id="rodape">
