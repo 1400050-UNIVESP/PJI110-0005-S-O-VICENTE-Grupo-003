@@ -6,7 +6,7 @@ if ($con->connect_error) {
 	die("A conexão falhou: " . $con->connect_error);
 }
 
-$sql = "SELECT ext_ID, data_inp, resp FROM inspecoes";
+$sql = "SELECT ext_ID, data_inp, resp, obs FROM inspecoes";
 $result = $con->query($sql);
 
 ?>
@@ -46,6 +46,7 @@ $result = $con->query($sql);
 						<th>ID</th>
 						<th>Data</th>
 						<th>Responsável</th>
+						<th>Observações</th>
 					</tr>
 				';
 					while ($row = $result->fetch_assoc()) {
@@ -53,7 +54,8 @@ $result = $con->query($sql);
 						<tr> 
 							<td>' . $row['ext_ID'] . '</td> 
 							<td>' . $row['data_inp'] . '</td> 
-							<td>' . $row['resp'] . '</td> 
+							<td>' . $row['resp'] . '</td>
+							<td>' . $row['obs'] . '</td> 
 						</tr>';
 					}
 					echo "</table>";
@@ -75,6 +77,9 @@ $result = $con->query($sql);
 						<textarea class="form-control" type="text" name="responsavel" placeholder="Responsável"></textarea>
 					</div>
 					<div class="col-md-6">
+					<textarea class="form-control" type="text" name="observacoes" placeholder="Observações"></textarea>
+					</div>
+					<div class="col-md-6">
 						<input class="botao cadastrar_vistoria" type="submit" value="Cadastrar">
 					</div>
 				</form>
@@ -88,6 +93,9 @@ $result = $con->query($sql);
 					</div>
 					<div class="col-md-6">
 						<textarea class="form-control" type="text" name="respUpdate" placeholder="Responsável"></textarea>
+					</div>
+					<div class="col-md-6">
+						<textarea class="form-control" type="text" name="observacoesUpdate" placeholder="Observações"></textarea>
 					</div>
 					<div class="col-md-6">
 						<input class="botao alterar_extintor" type="submit" value="Alterar">

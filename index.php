@@ -20,6 +20,7 @@
 					<li onmouseover="mudaFoto ()"><a href="extintores.php">Extintores</a></li>
 					<li onmouseover="mudaFoto ()"><a href="vistorias.php">Vistorias</a></li>
 					<li onmouseover="mudaFoto ()"><a href="manutencao.php">Manutenções</a></li>
+					<li onmouseover="mudaFoto ()"><a href="relatorios.php">Relatórios</a></li>
 
 				</ul>
 				</ul>

@@ -6,7 +6,7 @@ if ($con->connect_error) {
 	die("A conexão falhou: " . $con->connect_error);
 }
 
-$sql = "SELECT ext_ID, dataman, empresa FROM manutencao";
+$sql = "SELECT ext_ID, dataman, empresa, troca FROM manutencao";
 $result = $con->query($sql);
 
 ?>
@@ -46,6 +46,7 @@ $result = $con->query($sql);
 						<th>ID</th>
 						<th>Data</th>
 						<th>Empresa</th>
+						<th>Manutenção</th>
 					</tr>
 				';
 					while ($row = $result->fetch_assoc()) {
@@ -53,7 +54,8 @@ $result = $con->query($sql);
 						<tr> 
 							<td>' . $row['ext_ID'] . '</td> 
 							<td>' . $row['dataman'] . '</td> 
-							<td>' . $row['empresa'] . '</td> 
+							<td>' . $row['empresa'] . '</td>
+							<td>' . $row['troca'] . '</td>
 						</tr>';
 					}
 					echo "</table>";
@@ -75,6 +77,9 @@ $result = $con->query($sql);
 						<textarea class="form-control" type="text" name="empresa" placeholder="Empresa"></textarea>
 					</div>
 					<div class="col-md-6">
+						<textarea class="form-control" type="text" name="troca" placeholder="Manutenção"></textarea>
+					</div>	
+					<div class="col-md-6">
 						<input class="botao cadastrar_vistoria" type="submit" value="Cadastrar">
 					</div>
 				</form>
@@ -88,6 +93,9 @@ $result = $con->query($sql);
 					</div>
 					<div class="col-md-6">
 						<textarea class="form-control" type="text" name="empresaUpdate" placeholder="Empresa"></textarea>
+					</div>
+					<div class="col-md-6">
+						<textarea class="form-control" type="text" name="trocaUpdate" placeholder="Manutenção"></textarea>
 					</div>
 					<div class="col-md-6">
 						<input class="botao alterar_extintor" type="submit" value="Alterar">

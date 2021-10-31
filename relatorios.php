@@ -39,7 +39,7 @@ $result = $con->query($sql);
 			<div class="tabela_extintores">
 				<?php
 
-				if ($result !== false && $result->num_rows > 0) {
+				if ($result->num_rows > 0) {
 					echo '
 				<table border="1" cellspacing="2" cellpadding="3" style="width: 50%">
 					<tr>
