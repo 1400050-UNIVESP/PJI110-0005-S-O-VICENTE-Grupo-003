@@ -1,16 +1,3 @@
-<?php
-
-include "conectar.php";
-
-if ($con->connect_error) {
-	die("A conexão falhou: " . $con->connect_error);
-}
-
-$sql = "SELECT ext_ID, ext_local, tipo, capacidade FROM equipamentos";
-$result = $con->query($sql);
-
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -29,8 +16,14 @@ $result = $con->query($sql);
 			<nav id="menu">
 				<h1>Menu Principal</h1>
 				<ul>
+					<li onmouseover="mudaFoto ()"><a href="relatorio_extintor.php">Extintores</a></li>
+					<li onmouseover="mudaFoto ()"><a onclick="RelatorioExtintor()">Inspeções</a></li>
+					<li onmouseover="mudaFoto ()"><a onclick="RelatorioExtintor()">Manutenções</a></li>
+					<li onmouseover="mudaFoto ()"><a onclick="RelatorioExtintor()">Recarregar</a></li>
 					<li onmouseover="mudaFoto ()"><a href="index.php">Voltar</a></li>
 				</ul>
+				</ul>
+			
 		</header>
 		<figure class="foto-legenda">
 			<footer id="rodape">
