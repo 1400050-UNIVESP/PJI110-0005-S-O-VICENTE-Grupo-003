@@ -5,9 +5,8 @@ if ($con->connect_error) {
 	die("A conexão falhou: " . $con->connect_error);
 }
 
-$sql = "SELECT ext_ID,dataman,empresa,troca FROM manutencao";
+$sql = "SELECT ext_ID, date_format(dataman, '%d/%m/%Y') dataman,empresa,troca FROM manutencao";
 $busca = mysqli_query($con, $sql);
-
 
 require('fpdf.php');
 $pdf=new FPDF();

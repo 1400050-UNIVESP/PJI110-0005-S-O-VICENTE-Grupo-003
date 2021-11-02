@@ -5,7 +5,7 @@ if ($con->connect_error) {
 	die("A conexão falhou: " . $con->connect_error);
 }
 
-$sql = "SELECT ext_ID,data_inp,resp,obs FROM inspecoes";
+$sql = "SELECT ext_ID,date_format(data_inp, '%d/%m/%Y') data_inp,resp,obs FROM inspecoes";
 $busca = mysqli_query($con, $sql);
 
 
