@@ -13,15 +13,14 @@
 			<hgroup>
 				<h1>Relatórios</h1>
 				</hgroup>
-			<nav id="menu">
-				<h1>Menu Principal</h1>
+			
 				<ul>
-					<li onmouseover="mudaFoto ()"><a href="relatorio_extintor.php">Extintores</a></li>
-					<li onmouseover="mudaFoto ()"><a onclick="RelatorioExtintor()">Inspeções</a></li>
-					<li onmouseover="mudaFoto ()"><a onclick="RelatorioExtintor()">Manutenções</a></li>
-					<li onmouseover="mudaFoto ()"><a onclick="RelatorioExtintor()">Recarregar</a></li>
-					<li onmouseover="mudaFoto ()"><a href="index.php">Voltar</a></li>
-				</ul>
+					<input type="button" value="Extintores" onClick="window.open('pdfextintores.php')"/>
+					<input type="button" value="Inspeções" onClick="window.open('pdfinspecao.php')"/>
+					<input type="button" value="Manutenções" onClick="window.open('pdfmanutencao.php')"/>
+					<input type="button" value="Recarregar" onClick="window.open('pdfrecarregar.php')"/>
+					<input type="button" value="Voltar" onClick="JavaScript: window.history.back();">
+					</ul>
 				</ul>
 			
 		</header>
